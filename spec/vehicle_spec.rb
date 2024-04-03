@@ -14,4 +14,14 @@ RSpec.describe Vehicle do
       end
     end
 
+    describe '#speed' do
+      it 'is not speeding by default' do
+        expect(@vehicle.speeding?).to be (false)
+        
+        @vehicle.speed
+
+        expect(@vehicle.speeding?).to be (true)
+      end
+    end
+
 end
