@@ -1,6 +1,6 @@
-require './passenger'
+require './lib/passenger'
 
-RSpec describe Passenger do
+RSpec.describe Passenger do
     before(:each) do
         @charlie = Passenger.new({"name" => "Charlie", "age" => 18})
         @taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
@@ -10,8 +10,15 @@ RSpec describe Passenger do
     it 'can initialize' do
       expect(@charlie).to be_an_instance_of(Passenger)
       expect(@charlie.name).to eq('Charlie')
-      expect(@ccharlie.age).to eq(12)
+      expect(@charlie.age).to eq(18)
     end
+
+    it 'can initialize another person' do
+        expect(@taylor).to be_an_instance_of(Passenger)
+        expect(@taylor.name).to eq('Taylor')
+        expect(@taylor.age).to eq(12)
+      end
+
   end
 
 
