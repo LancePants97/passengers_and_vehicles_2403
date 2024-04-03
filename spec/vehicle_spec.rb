@@ -50,4 +50,24 @@ RSpec.describe Vehicle do
       end
     end
 
+    describe '#num adults' do
+      it 'has no adults by default' do
+        expect(@vehicle.num_adults).to eq(0)
+      end
+      it 'can add adults' do
+        @charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+        @jude = Passenger.new({"name" => "Jude", "age" => 20})
+        @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+        
+        expect(@vehicle.num_adults).to eq(0)
+
+        @vehicle.add_passenger(@charlie)
+        @vehicle.add_passenger(@jude)
+        @vehicle.add_passenger(@taylor)
+
+        expect(@vehicle.num_adults).to eq(2)        
+
+      end
+    end
+
 end
