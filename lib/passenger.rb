@@ -4,12 +4,18 @@ class Passenger
     def initialize(trait)
         @name = trait["name"]
         @age = trait["age"]
+        @driver = false
     end
 
     def adult?
-        if @age >= 18
-            true
-        else
-            false
+         @age >= 18
+    end
+
+    def driver?
+        @driver
+    end
+    
+    def drive
+        @driver = true
     end
 end
